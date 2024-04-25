@@ -1,0 +1,358 @@
+:root {
+  font-family: Inter, system-ui, Av  enir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  box-sizing: border-box;
+  font-size: 16px;
+
+  --Nutmeg: hsl(14, 45%, 36%);
+  --Dark-Raspberry: hsl(332, 51%, 32%);
+
+  --White: hsl(0, 0%, 100%);
+  --Rose-White: hsl(330, 100%, 98%);
+  --Eggshell: hsl(30, 54%, 90%);
+  --Light-Grey: hsl(30, 18%, 87%);
+  --Wenge-Brown: hsl(30, 10%, 34%);
+  --Dark-Charcoal: hsl(24, 5%, 18%);
+  --clr-white-coffee: #E3DDD7;
+
+
+  /* DARK MODE COLORS */
+  --Grey: hsl(0, 0%, 20%);
+  --Dark-Grey: hsl(0, 0%, 12%);
+  --Off-Black: hsl(0, 0%, 8%);
+  --Light-Raspberry: hsl(332, 87%, 70%);
+  --Light-Nutmeg: hsl(14, 65%, 60%);
+
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Outfit", sans-serif;
+  background-color: var(--Eggshell);
+}
+body.dark {
+  background-color: var(--Off-Black);
+}
+hr {
+  border: 1px solid var(--clr-white-coffee);
+  margin: 0;
+  width: 100%;
+  opacity: 70%;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+h1, h2 {
+  font-family: "Young Serif", sans-serif;
+}
+h1 {
+  font-size: 2.6rem;
+}
+h2 {
+  color: var(--Nutmeg);
+}
+main.dark h2 {
+  color: var(--Light-Nutmeg);
+}
+
+b {
+  margin-right: 4px;
+}
+
+main {
+  background-color: var(--Eggshell);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
+}
+main.dark {
+  background-color: var(--Off-Black);
+}
+
+
+/*  TOGGLE BUTTON (DARK MODE) */
+
+.toggle {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.toggle-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  width: 40px;
+  height: 20px;
+  background-color: var(--White);
+  border-radius: 20px;
+  gap: 8px;
+  padding: 1px;
+  border: 1px solid var(--Dark-Raspberry);
+  cursor: pointer;
+  transition: 1s ;
+}
+main.dark .toggle-btn {
+  justify-content: right;
+  border: 1px solid var(--White);
+  background-color: black;
+}
+.toggle-slider {
+  width: 16px;
+  height: 16px;
+  /* margin: 1px; */
+  background-color: var(--Dark-Raspberry);
+  border-radius: 50%;
+  transition: 1s;
+}
+main.dark .toggle-slider {
+  background-color: var(--Rose-White);
+}
+.light {
+  color: black;
+  font-weight: 500;
+}
+main.dark .light {
+  color: gray;
+  font-weight: 400;
+}
+.dark-text {
+  color: gray;
+  font-weight: 400;
+}
+main.dark .dark-text {
+  color: white;
+  font-weight: 500;
+}
+
+/* RECIPE MAIN CONTAINER  */
+
+.container {
+  background-color: var(--White);
+  width: 50%;
+  /* height: 100%; */
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 100px;
+  transition: 1s;
+}
+main.dark .container {
+  background-color: var(--Dark-Grey);
+  color: white;
+}
+
+.recipe {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.recipe-img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.recipe h1 {
+  margin: 24px 0;
+}
+
+
+/* PREPARATION TIME  */
+.time {
+  padding: 24px 28px;
+  background-color: var(--Rose-White);
+  border-radius: 10px;
+  margin-top: 32px;
+  transition: 1s;
+}
+main.dark .time {
+  background-color: var(--Grey);
+  color: var(--White);
+}
+.time h3 {
+  color: var(--Dark-Raspberry);
+  transition: 1s;
+}
+main.dark .time h3 {
+  color: var(--Light-Raspberry);
+}
+
+.time ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 5px;
+}
+.time li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+.time li::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--Dark-Raspberry);
+  margin-right: 32px;
+
+}
+main.dark .time li::before {
+  background-color: var(--Light-Raspberry);
+}
+
+
+/* INGREDIANTS */
+.ingrediants {
+  margin-top: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--clr-white-coffee);
+}
+.ingrediants ul {
+  padding-left: 5px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ingrediants li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+
+.ingrediants li::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--Nutmeg);
+}
+main.dark .ingrediants li::before {
+  background-color: var(--Light-Nutmeg);
+}
+
+
+/* INSTRUCTIONS  */
+
+.instructions {
+  margin-top: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--clr-white-coffee);
+}
+
+.instructions ol {  
+  padding-left: 5px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  counter-reset: item;
+  list-style-position: outside;
+} 
+
+/* IMPORTANT  */
+
+.instructions li {
+  padding-left: 32px;
+  counter-increment: item;
+  position: relative;
+  
+}
+
+.instructions li::before {
+  content: counter(item) ". ";
+  color: var(--Nutmeg);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+
+main.dark .instructions li::before {
+  color: var(--Light-Nutmeg);
+}
+
+
+
+/* NUTRITION  */
+
+
+.nutrition {
+  margin-top: 32px ;
+}
+.nutrition .desc {
+  margin: 24px 0;
+}
+
+.nutrition ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 0;
+}
+.nutrition li {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 40px;
+}
+.nutrition li p {
+  width: 45%;
+  text-align: left;
+}
+.nutrition li .element {
+  color: var(--Nutmeg);
+  font-weight: bold;
+}
+
+main.dark .nutrition li .element {
+  color: var(--Light-Nutmeg);
+}
+
+@media screen  and  (max-width: 460px){
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .recipe-img {
+    width: 100%;
+    border-radius: 0;
+  }
+  .recipe {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 20px;
+  }
+ 
+}
